@@ -1,21 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from "react";
+import TodoItem from "./TodoItem";
 import './App.css';
 
-function App() {
-  return (
-  <div>
-    <div className="div1">hello world</div>
-    <div className="div2">hello world</div>
-    <div className="div3">hello world</div>
-    <div className="div4">hello world</div>
-    <div className="div5">hello world</div>
-    <div className="div6">hello world</div>
-  </div>
-  
-    );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      items: [],
+      value: ""
+    };
   }
 
-value=>(value+2)
+  onClickAdd = e => {
+    const items = this.state.items;
+    items.push(this.state.value);
+    this.setState({
+      items
+    });
+  };
 
+  onChange = e => {
+    this.setState({ value: e.target.value });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <input type="text" className="App-input" onChange={this.onChange} />
+        <button onClick={this.onClickAdd} className="App-button">추가</button>
+        {this.state.items.map((value, idx) => (
+          <TodoItem key={idx} value={value} />
+        ))}
+      </div>
+    );
+  }
+}
 export default App;

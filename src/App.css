@@ -1,0 +1,25 @@
+*{
+    font-size:30px;
+  }
+  
+  .App-input{
+    border-radius: 10px;
+  }
+  
+  .App-button{
+    border-radius: 10px;
+    background-color:white;
+  }
+  
+  .App-div{
+    display:flex;
+    justify-content:flex-end;
+  }
+  
+  .App{
+    display:inline-block;
+    border-style: solid;
+    border-image: linear-gradient(to right, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-image-slice: 1;  
+  }
+  
